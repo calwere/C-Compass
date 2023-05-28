@@ -1,5 +1,8 @@
 from django.shortcuts import render
 
+# def index(request):
+#     return render (request, 'index.html')
+    
 # For AJAX requests
 from django.http import JsonResponse
 from rest_framework.decorators import api_view

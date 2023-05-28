@@ -1,3 +1,4 @@
+{% extends 'index.html' %}
 <!-- 
 <!DOCTYPE html>
 <html>
@@ -99,6 +100,10 @@
 </body>
 </html> --> -->
 
+
+
+<!-- {% block content %} -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -112,8 +117,8 @@
         }
         #map {
             padding: 5px;
-            width: 75%;
-            height: 20vh;
+            width: 100%;
+            height: 400vh;
             position:absolute;
             
         }
@@ -156,22 +161,23 @@
         <a href="#contact">Contact</a>
     </nav>
   </div>
-    <div id="home" style="padding-top: 0px;">
+      <!-- <div id="home" style="padding-top: 0px;">
         <h1>Welcome to House Hunting Map!</h1>
         <p>Find your dream house with ease.</p>
     </div>
     <div id="about" style="padding-top: 0px;">
         <h1>About Us</h1>
         <p>We are a team of experienced real estate agents who are dedicated to helping you find the perfect home.</p>
-    </div>
-    <div id="houses" style="padding-top: 0px;">
+    </div> -->
+   <div id="houses" style="padding-top: 0px;">
         <h1>Houses</h1>
         <div id="map"></div>
     </div>
     <div id="contact" style="padding-top: 0px;">
         <h1>Contact Us</h1>
         <p>Email: contact@househuntingmap.com</p>
-    </div>
+    </div> 
+    <div id="mapcanva">
     <script>
         var map = L.map('map').setView([-1.2833, 36.8167], 8);
 
@@ -205,6 +211,7 @@
             });
 
     </script>
+    </div>
     <!-- AJAX REQUESTS -->
     <div id="house-list">
     <h2>Houses:</h2>
@@ -244,4 +251,4 @@
   </body>
   </html>
 
-
+<!-- {% endblock content %} -->

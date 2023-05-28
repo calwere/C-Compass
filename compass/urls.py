@@ -2,8 +2,12 @@ from django.urls import path
 from . import views
 from .views import HouseList, HouseDetail, MoverList, AmenityList, AgentList, house_search, calculate_moving_charges, get_nearby_amenities, MapView, houseCreate, houseUpdate, houseDelete
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('houses/', HouseList.as_view(), name='house-list'),
+    # path('', views.index, name='index'),
     path('', MapView.as_view(), name='map'),    
     path('houses/<int:pk>/', HouseDetail.as_view(), name='house-detail'),
     path('movers/', MoverList.as_view()),
@@ -18,4 +22,4 @@ urlpatterns = [
     path('house-details/str:pk/', views.house_detail, name="house-details"),
     path('house-overview/', views.apiOverview, name="overview"),
    
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

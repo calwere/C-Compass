@@ -1,7 +1,10 @@
-from django.db import models
+from django.contrib.gis.db import models
+
+
 
 # Create your models here.
-from django.db import models
+# from django.db import models
+
 
 class Agent(models.Model):
     name = models.CharField(max_length=100)
@@ -16,11 +19,14 @@ class House(models.Model):
     image = models.ImageField(upload_to='houses')
     latitude = models.DecimalField(max_digits=10, decimal_places=7)
     longitude = models.DecimalField(max_digits=10, decimal_places=7)
+    location = models.PointField()
+
 
 class Amenity(models.Model):
     name = models.CharField(max_length=100)
     latitude = models.DecimalField(max_digits=10, decimal_places=7)
     longitude = models.DecimalField(max_digits=10, decimal_places=7)
+    location = models.PointField()
 
 class User(models.Model):
     username = models.CharField(max_length=100)
